@@ -29,18 +29,26 @@ public class StringProblems{
         String concatenation =  s1 + s2;
         while(bool=false){
             
-            int index2 = 1;
-            int index3 = 2;
-            String sub1 = concatenation.substring(0,index2);
-            String sub2 = concatenation.substring(index2,index3);
+            int index1 = 1;
+            int index2 = 2;
+            String sub1 = concatenation.substring(0,index1);
+            String sub2 = concatenation.substring(index1,index2);
 
             if(sub1.equals(sub2)){
-                String newResult = concatenation.substring(0,index2);
-                
-                return 
+                String sub3 = concatenation.substring(0,index1);
+                Sttring sub4 = concatenation.substring(index2+1);
+
+                return sub3+sub4;
+            }
+            else{
+                index1 ++;
+                index2 ++;
+            }
+            if (index2> (concatenation.length()+1)){
+                return s1+s2;
             }
         }
-        return s1+s2;
+        
     }
 
     // Given a string, return a version without the first 2 chars. 
