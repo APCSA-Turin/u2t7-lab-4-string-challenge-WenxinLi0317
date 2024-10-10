@@ -1,3 +1,5 @@
+package com.example.project;
+
 public class StringProblems{
     //empty constructor
     public StringProblems(){}
@@ -9,8 +11,8 @@ public class StringProblems{
     // endsLy("oddy") → false
     public boolean endsLy(String x){
             //implement code here
-        int lastTwoLetter = (endsLy.lemngth()-2);
-        if (endsLy.substring(lastTwoLetter).equals("ly")){
+        int lastTwoLetter = (x.length()-2);
+        if (x.substring(lastTwoLetter).equals("ly")){
             return true;
         }
         return false;
@@ -36,7 +38,7 @@ public class StringProblems{
 
             if(sub1.equals(sub2)){
                 String sub3 = concatenation.substring(0,index1);
-                Sttring sub4 = concatenation.substring(index2+1);
+                String sub4 = concatenation.substring(index2+1);
 
                 return sub3+sub4;
             }
@@ -61,12 +63,20 @@ public class StringProblems{
         //implement code here
 
         String firstLetter = s1.substring(0,1);
-        //String secondLetetr = s1.substring(1,2);
+        String secondLetter = s1.substring(1,2);
         String subString = s1.substring(2);
-        if(firstLetter.equals("a")){
+
+        if(firstLetter.equals("a") && secondLetter.equals("b")){
+            return s1;
+        }else if (firstLetter.equals("a")){
             return firstLetter+s1.substring(2);
+        }else if(secondLetter.equals("b")){
+            return s1.substring(1);
+        }else{
+            return subString;
         }
-        return subString;
+        
+        //return firstLetter+s1.substring(2);
     }
 
     
@@ -78,13 +88,13 @@ public class StringProblems{
     // withoutX("Hxix") → "Hxi"
     public String withoutX(String s1){
         String firstLetter = s1.substring(0,1);
-        String lastLetetr = s1.substring(s1.length());
+        String lastLetetr = s1.substring(s1.length() - 1);
         int length = s1.length();
-        if(firstLetter.equal("x") && lastLetetr.equal("x")){
-            s1 = s1.substring(1,(length+1));
-        }else if (firstLetter.equal("x")){
+        if(firstLetter.equals("x") && lastLetetr.equals("x")){
+            s1 = s1.substring(1,(length));
+        }else if (firstLetter.equals("x")){
             s1 = s1.substring(1);
-        }else if (lastLetetr.equal("x")){
+        }else if (lastLetetr.equals("x")){
             s1 = s1.substring(0,length);
         }
         return s1;
@@ -99,12 +109,12 @@ public class StringProblems{
     // fizzString("fib") → "FizzBuzz"
     public String fizzString(String s1){
         String firstLtter = s1.substring(0,1);
-        Stirng lastLetter = s1.substring(s1.length());
-        if(firstLtter.equal("f") && lastLetter.equal("b")){
+        String lastLetter = s1.substring(s1.length());
+        if(firstLtter.equals("f") && lastLetter.equals("b")){
             s1 = "FizzBuzz";
-        }else if(firstLtter.equal("f")){
+        }else if(firstLtter.equals("f")){
             s1 ="Fizz";
-        }else if (lastLetter.equal("b")){
+        }else if (lastLetter.equals("b")){
             s1 = "Buzz";
         }
 
@@ -127,9 +137,11 @@ public class StringProblems{
             return "Fizz";
         }else if (x%5==0){
             return "Buzz";
-        }else{
-            return (String)x+"!";
+        }else {
+            String newx = "(String)x";
+            return newx + "!";
         }
+        
         
     }
 }
